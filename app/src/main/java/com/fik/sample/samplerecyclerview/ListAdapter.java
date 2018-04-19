@@ -59,9 +59,11 @@ public class ListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(context, DetailActivity.class);
+                //data yg dikirim
                 i.putExtra("judul", arrlist.get(position).judul);
                 i.putExtra("tgl", arrlist.get(position).tgl);
                 i.putExtra("deskripsi", arrlist.get(position).deskripsi);
+                //pindah activity
                 context.startActivity(i);
 
             }
