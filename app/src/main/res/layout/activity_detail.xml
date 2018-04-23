@@ -39,4 +39,23 @@
         android:text="Deskripsi"
         android:textSize="@dimen/text_size_big" />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Title Spinner"
+        android:layout_marginRight="@dimen/margin_small"
+        android:layout_marginLeft="@dimen/margin_small"
+        android:layout_marginTop="@dimen/margin_small"
+        android:layout_margin="@dimen/margin_small"
+        android:textSize="@dimen/text_size_small" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/margin_small"
+        android:layout_marginLeft="@dimen/margin_small"
+        android:layout_marginBottom="@dimen/margin_small"
+        android:drawSelectorOnTop="true" />
+
 </LinearLayout>

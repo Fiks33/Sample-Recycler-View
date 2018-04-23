@@ -3,6 +3,8 @@ package com.fik.sample.samplerecyclerview;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 /**
@@ -15,8 +17,11 @@ public class DetailActivity extends AppCompatActivity{
 
     private Toolbar mToolbar;
     private TextView txtJudul,txtDeskripsi, txtTgl;
+    private Spinner mSpinner;
 
     private String judul,deskripsi,tgl;
+
+    private String itemSpinner[]    = {"Spinner1","Spinner2","Spinner3","Spinner4"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +32,7 @@ public class DetailActivity extends AppCompatActivity{
         txtJudul        = (TextView) findViewById(R.id.judul);
         txtDeskripsi    = (TextView) findViewById(R.id.deskripsi);
         txtTgl          = (TextView) findViewById(R.id.tgl);
+        mSpinner        = (Spinner) findViewById(R.id.spinner);
 
         setSupportActionBar(mToolbar);
 
@@ -37,6 +43,12 @@ public class DetailActivity extends AppCompatActivity{
         txtJudul.setText(judul);
         txtDeskripsi.setText(deskripsi);
         txtTgl.setText(tgl);
+
+        //set Adapter Spinner
+        ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(getApplicationContext(),
+                R.layout.spinner_item, itemSpinner);
+        spinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        mSpinner.setAdapter(spinnerArrayAdapter);
     }
 
     //get data dari activity sebelumnya
